@@ -1,0 +1,47 @@
+{
+    "backgrounds": {
+        "type": "color",
+        "color": null
+    },
+    "size": "650x450",
+    "elements": [
+        {
+            "type": "text",
+            "color": "black",
+            "contents": "\u8ddd\u79bb\u9ad8\u8003\u4ec5\u5269",
+            "pos": "55,100",
+            "size": "2,12",
+            "fontsize": 35
+        },
+        {
+            "type": "$days",
+            "color": "red",
+            "pos": "385,100",
+            "size": "2,3",
+            "fontsize": 35
+        },
+        {
+            "type": "text",
+            "color": "black",
+            "contents": "\u5929",
+            "pos": "475,100",
+            "size": "2,3",
+            "fontsize": 35
+        },
+        {
+            "type": "$couragements",
+            "color": "red",
+            "pos": "30,250",
+            "size": "2,50",
+            "fontsize": 15
+        },
+        {
+            "type": "text",
+            "color": "black",
+            "contents": "\u63d0\u793a\uff1a\u6559\u5e08\u4e0a\u8bfe\u671f\u95f4\u53ef\u4ee5\u70b9\u51fb\u201c\u4e34\u65f6\u5173\u95ed\u201d\u5173\u95ed\u7a0b\u5e8f\uff01",
+            "pos": "100,350",
+            "size": "2,50",
+            "fontsize": 10
+        }
+    ]
+}
