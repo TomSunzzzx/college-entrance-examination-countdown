@@ -210,7 +210,7 @@ def author_info() -> None:
     win2.resizable(False, False)  # 禁止修改大小
 
     t = tk.Text(win2, height=20, width=25)
-    t.insert(tk.END, '高考计时器\nV：1.3.0(2024.8.31)\n作者：孙培煊\nQQ：2979987115\n有Bug及时反馈\n未经允许禁止转载！\n程序语言：python\nGUI库：tkinter\n\n新版本1.3.0已发布！\n更新内容：\n1.部分“设置”功能，包括密码修改、时间表的增、删、改、修改特殊时间表及触发日期。\n2.对临时关闭功能算法小修改。\n3.现在可以通过修改配置文件以及皮肤文件对程序做出改动，详情请看“开发须知.txt”文件。\n\n更新计划（画饼）\n1.继续完成设置功能\n2.做皮肤编辑器\n3.开发者模式（调试、运行日志）\n4.更新日志')
+    t.insert(tk.END, '高考计时器\nV：1.3.0(2024.8.24)\n作者：孙培煊\nQQ：2979987115\n有Bug及时反馈\n未经允许禁止转载！\n程序语言：python\nGUI库：tkinter\n\n新版本1.3.0已发布！\n更新内容：\n1.部分“设置”功能，包括密码修改、时间表的增、删、改、修改特殊时间表及触发日期。\n2.对临时关闭功能算法小修改。\n3.现在可以通过修改配置文件以及皮肤文件对程序做出改动，详情请看“开发须知.txt”文件。\n\n更新计划（画饼）\n1.继续完成设置功能\n2.做皮肤编辑器\n3.开发者模式（调试、运行日志）\n4.更新日志')
     f = font.Font(size=5)
     t.configure(bg=win2.cget('bg'), font=f, state='disabled', borderwidth=0, highlightthickness=0)
     t.pack()
