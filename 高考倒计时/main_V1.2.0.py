@@ -22,7 +22,7 @@ def init_data() -> None:
     # 获取配置资源
     if not os.path.exists('config.json'):
         messagebox.showinfo('提示', '未找到配置文件，将创建初始config文件，请勿删除！')
-        config = {"adminPass": "", "schedule": {"normal": [], "special": {"state": "negtive", "active_days": [], "schedule": []}}, "skin": "skin/originalskin.json"}
+        config = {"adminPass": "", "schedule": {"normal": [], "special": {"state": "negative", "activeDays": [], "schedule": []}}, "skin": "skin/originalskin.json", "desktopMode":False}
     else:
         try:
             with open('config.json', 'r', encoding='utf-8') as config_file:
@@ -32,14 +32,14 @@ def init_data() -> None:
             messagebox.showerror('错误', '程序因无法正确读取和解析文件而发生如下错误无法正常运行，您可以将错误截图反馈给作者：2979987115@qq.com\n\n{0}\n此外，如果您具备相关知识，请根据以上错误修复文件\n\n\t\t！！！注意！！！\n由于此错误，你可以选择恢复到初始的配置文件。\n请在下一个弹窗中点击“确定”来更新文件，点击“取消”程序将保留出错的配置文件并退出。'.format(str(tb)))
             ques = messagebox.askyesno('', '是否恢复到初始的配置文件')
             if ques:
-                config = {"adminPass": "", "schedule": {"normal": [], "special": {"state": "negtive", "active_days": [], "schedule": []}}, "skin": "skin/originalskin.json"}
+                config = {"adminPass": "", "schedule": {"normal": [], "special": {"state": "negative", "activeDays": [], "schedule": []}}, "skin": "skin/originalskin.json", "desktopMode":False}
             else:
                 exit()
 
     # 配置变量
     try:
         password = config['adminPass']
-        schedule = config['schedule']['special']['schedule'] if config['schedule']['special']['state'] == 'active' and datetime.datetime.today().today() in config['schedule']['special']['active_days'] else config['schedule']['normal']
+        schedule = config['schedule']['special']['schedule'] if config['schedule']['special']['state'] == 'active' and datetime.datetime.today().today() in config['schedule']['special']['activeDays'] else config['schedule']['normal']
         skin_path = config['skin']
     except:
         tb = traceback.format_exc()
@@ -65,7 +65,7 @@ def init_data() -> None:
     # 2、把时间表里的元素换成datetime对象
     try:
         for i in range(len(schedule)):
-            schedule[i] = [datetime.time(int(schedule[i][0].split(',')[0]), int(schedule[i][0].split(',')[1])), datetime.time(int(schedule[i][1].split(',')[0]), int(schedule[i][1].split(',')[1]))]
+            schedule[i] = [datetime.time(int(schedule[i][0].split(':')[0]), int(schedule[i][0].split(':')[1])), datetime.time(int(schedule[i][1].split(':')[0]), int(schedule[i][1].split(':')[1]))]
     except:
         tb = traceback.format_exc()
         messagebox.showerror('错误', '程序因无法正确读取和解析文件而发生如下错误无法正常运行，您可以将错误截图反馈给作者：2979987115@qq.com\n\n{0}\n此外，如果您具备相关知识，请根据以上错误修复文件\n\n\t\t！！！注意！！！\n由于此错误，程序即将退出。请重新下载配置正确文件！'.format(str(tb)))
