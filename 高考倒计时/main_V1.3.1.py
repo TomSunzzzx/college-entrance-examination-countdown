@@ -17,7 +17,7 @@ table: 表
 按钮触发的函数命名去掉btn及所属窗口/页面前缀
 """
 
-from re import T
+
 import datetime, time  # 时间相关库
 import random  # 随机数库，用于随机产生标语
 import tkinter as tk  # GUI的相关库
